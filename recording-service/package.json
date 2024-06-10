@@ -1,0 +1,10 @@
+{
+  "name": "recording-service",
+  "version": "1.0.0",
+  "description": "Servicio recording-service",
+  "main": "recording-service.js",
+  "scripts": {
+    "start": "node recording-service.js"
+  },
+  "dependencies": {}
+}

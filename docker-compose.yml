@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  stt-service:
+    build: ./stt-service
+    container_name: stt-service
+    command: ["node", "stt-service.js"]
+    volumes:
+      - ./stt-service:/app
+    networks:
+      - homeSmart-network
+
+  recording-service:
+    build: ./recording-service
+    container_name: recording-service
+    command: ["node", "recording-service.js"]
+    volumes:
+      - ./recording-service:/app
+    networks:
+      - homeSmart-network
+
+  notification-service:
+    build: ./notification-service
+    container_name: notification-service
+    command: ["node", "notification-service.js"]
+    volumes:
+      - ./notification-service:/app
+    networks:
+      - homeSmart-network
+
+  iot-control-service:
+    build: ./iot-control-service
+    container_name: iot-control-service
+    command: ["node", "iot-control-service.js"]
+    volumes:
+      - ./iot-control-service:/app
+    networks:
+      - homeSmart-network
+
+  user-management-service:
+    build: ./user-management-service
+    container_name: user-management-service
+    command: ["node", "user-management-service.js"]
+    volumes:
+      - ./user-management-service:/app
+    networks:
+      - homeSmart-network
+
+  orchestration-service:
+    build: ./orchestration-service
+    container_name: orchestration-service
+    command: ["node", "orchestration-service.js"]
+    volumes:
+      - ./orchestration-service:/app
+    networks:
+      - homeSmart-network
+
+  network-monitor:
+    build: ./network-monitor
+    container_name: network-monitor
+    command: ["node", "network-monitor.js"]
+    volumes:
+      - ./network-monitor:/app
+    networks:
+      - homeSmart-network
+
+networks:
+  homeSmart-network:
+    driver: bridge
