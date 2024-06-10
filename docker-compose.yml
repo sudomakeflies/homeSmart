@@ -1,10 +1,10 @@
-version: '3.8'
+version: '3.9'
 
 services:
   stt-service:
     build: ./stt-service
     container_name: stt-service
-    command: ["node", "stt-service.js"]
+    command: ["node", "app.js"]
     volumes:
       - ./stt-service:/app
     networks:

@@ -13,5 +13,9 @@ RUN npm install
 # Copiar el resto de los archivos de la aplicación
 COPY . .
 
+# o si los archivos están en subdirectorios específicos
+COPY ./src/*.js ./
+
+
 # Comando para iniciar la aplicación
 CMD ["node", "iot-control-service.js"]
