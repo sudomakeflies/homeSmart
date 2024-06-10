@@ -1,5 +1,5 @@
 # Usar la imagen base de Node.js
-FROM node:14
+FROM node:16
 
 # Crear el directorio de la aplicación en el contenedor
 WORKDIR /app
@@ -12,6 +12,7 @@ RUN npm install
 
 # Copiar el resto de los archivos de la aplicación
 COPY . .
+COPY ./src/*.js ./
 
 # Comando para iniciar la aplicación
-CMD ["node", "network-monitor.js"]
+CMD ["node", "src/main.js"]

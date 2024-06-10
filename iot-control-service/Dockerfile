@@ -1,21 +1,23 @@
-# Usar la imagen base de Node.js
-FROM node:14
+# Dockerfile para iot-control-service
 
-# Crear el directorio de la aplicación en el contenedor
+# Usar una imagen base de Node.js
+FROM node:16
+
+# Crear un directorio de trabajo
 WORKDIR /app
 
-# Copiar el package.json y package-lock.json (si existe)
+# Copiar los archivos del proyecto al contenedor
 COPY package*.json ./
 
-# Instalar las dependencias de la aplicación
+# Instalar las dependencias
 RUN npm install
 
-# Copiar el resto de los archivos de la aplicación
+# Copiar el resto de los archivos del proyecto al contenedor
 COPY . .
-
-# o si los archivos están en subdirectorios específicos
 COPY ./src/*.js ./
 
+# Exponer el puerto (si es necesario para tu servicio)
+EXPOSE 3000
 
-# Comando para iniciar la aplicación
-CMD ["node", "iot-control-service.js"]
+# Comando por defecto para ejecutar la aplicación
+CMD ["node", "src/main.js"]  # Asegúrate de que 'main.js' sea el archivo principal de tu aplicación

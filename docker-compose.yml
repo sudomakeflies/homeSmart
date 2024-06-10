@@ -4,16 +4,20 @@ services:
   stt-service:
     build: ./stt-service
     container_name: stt-service
-    command: ["node", "app.js"]
+    command: ["bash", "-c", "npm install -g pm2 && ./setup_pm2.sh"]
+
     volumes:
       - ./stt-service:/app
     networks:
       - homeSmart-network
+    restart: always  # Asegura que el servicio se reinicie automáticamente si falla
+    environment:
+      - NODE_ENV=testing
 
   recording-service:
     build: ./recording-service
     container_name: recording-service
-    command: ["node", "recording-service.js"]
+    command: ["node", "main.js"]
     volumes:
       - ./recording-service:/app
     networks:
@@ -22,7 +26,7 @@ services:
   notification-service:
     build: ./notification-service
     container_name: notification-service
-    command: ["node", "notification-service.js"]
+    command: ["node", "main.js"]
     volumes:
       - ./notification-service:/app
     networks:
@@ -31,7 +35,7 @@ services:
   iot-control-service:
     build: ./iot-control-service
     container_name: iot-control-service
-    command: ["node", "iot-control-service.js"]
+    command: ["node", "main.js"]
     volumes:
       - ./iot-control-service:/app
     networks:
@@ -40,7 +44,7 @@ services:
   user-management-service:
     build: ./user-management-service
     container_name: user-management-service
-    command: ["node", "user-management-service.js"]
+    command: ["node", "main.js"]
     volumes:
       - ./user-management-service:/app
     networks:
@@ -49,7 +53,7 @@ services:
   orchestration-service:
     build: ./orchestration-service
     container_name: orchestration-service
-    command: ["node", "orchestration-service.js"]
+    command: ["node", "main.js"]
     volumes:
       - ./orchestration-service:/app
     networks:
@@ -58,7 +62,7 @@ services:
   network-monitor:
     build: ./network-monitor
     container_name: network-monitor
-    command: ["node", "network-monitor.js"]
+    command: ["node", "main.js"]
     volumes:
       - ./network-monitor:/app
     networks:
