@@ -1,0 +1,12 @@
+{
+  "name": "orchestration-service",
+  "version": "1.0.0",
+  "description": "Servicio de orquestación de microservicios",
+  "main": "orchestration-service.js",
+  "scripts": {
+    "start": "node orchestration-service.js"
+  },
+  "dependencies": {
+    "child_process": "^1.0.2"
+  }
+}

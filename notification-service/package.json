@@ -1,0 +1,12 @@
+{
+  "name": "notification-service",
+  "version": "1.0.0",
+  "description": "Servicio de notificaciones mediante Twilio",
+  "main": "notification-service.js",
+  "scripts": {
+    "start": "node notification-service.js"
+  },
+  "dependencies": {
+    "twilio": "^5.1.1"
+  }
+}
