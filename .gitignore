@@ -1,0 +1,162 @@
+# Ignorar archivos generados por macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Carpetas generadas por macOS
+__MACOSX/
+
+# Archivos de Thumbnail de Iconos en macOS
+._*
+
+# Archivos de librerías locales
+*.swp
+*.swo
+
+# Ignorar archivos de sistema
+Icon?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*~
+
+# Ignorar carpetas de entorno de desarrollo locales
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Ignorar entornos virtuales y dependencias de Python
+venv/
+__pycache__/
+
+# Ignorar logs, lock files y otros archivos temporales
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Ignorar dependencias instaladas localmente por npm
+node_modules/
+npm-shrinkwrap.json
+package-lock.json
+
+# Ignorar builds
+dist/
+build/
+.out/
+*.out
+
+# Ignorar carpetas y archivos de configuración de Docker
+docker-compose.override.yml
+docker-compose.override.yml.example
+
+# Ignorar archivos de configuración de PM2
+.pm2/
+
+# Ignorar archivos y carpetas generados por la instalación de npm y Yarn
+package-lock.json
+yarn.lock
+
+# Ignorar carpetas y archivos temporales de la aplicación
+tmp/
+temp/
+logs/
+*.log
+*.log.*
+
+# Ignorar archivos de configuración sensibles (puedes configurar estos nombres si los cambias)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# Ignorar archivos de cobertura de pruebas
+coverage/
+.nyc_output/
+
+# Ignorar archivos creados por servicios como los scripts bash
+*.sh~
+
+# Ignorar archivos y carpetas de configuración del sistema operativo en contenedores Docker
+.git/
+.dockerignore
+Dockerfile
+
+# Ignorar archivos relacionados con el proceso de despliegue
+.deploy/
+.deployments/
+
+# Ignorar cualquier archivo relacionado con la configuración local del proyecto
+local-settings.json
+
+# Ignorar carpetas de respaldo
+backup/
+backups/
+*.bak
+
+# Ignorar archivos de la carpeta src en caso de que sean generados automáticamente
+src/**/*.js.map
+src/**/*.js~
+
+# Archivos específicos del proyecto
+stt-service/src/*.log
+stt-service/src/tmp/
+
+# Ignorar binarios y otros artefactos compilados
+*.exe
+*.o
+*.obj
+*.dll
+*.class
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dylib
+*.lib
+*.a
+*.out
+*.d
+*.lst
+*.lo
+*.la
+*.lai
+*.slo
+*.loT
+*.gch
+*.s
+*.mod
+
+# Archivos temporales de compilación
+*.swp
+*.swo
+
+# Ignorar artefactos de Python
+*.py[cod]
+__pycache__/
+*.so
+
+# Otros artefactos de configuración del sistema
+*.DS_Store
+
+# Ignorar archivos de caché de librerías de Node.js
+.cache/
+.next/
+.nuxt/
+.out/
+
+# Ignorar configuraciones y archivos de ejecución específicos del usuario
+*.local
+*.user
+*.swp
+*.swo
+*.bak
+*.backup
+*.tmp
+*.temp
